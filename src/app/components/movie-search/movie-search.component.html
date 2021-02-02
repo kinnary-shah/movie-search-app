@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="form-group">
+    <label for="searchText"></label>
+    <input class="form-control" type="text" id="searchText" placeholder="Search by title" label="Search Movies"
+      name="Search Movies" [(ngModel)]="searchText" (keyup.enter)="searchMovies($event)">
+  </div>
+  <button class="form-control btn btn-primary" label="search" name="search" type="button"
+    (click)="searchMovies($event)">Search
+  </button>
+  <hr>
+  <div class="row">
+        <app-movie-detail *ngFor="let movie of movies | async" [movie]=movie></app-movie-detail>
+  </div>
+</div>

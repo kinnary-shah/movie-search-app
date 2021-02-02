@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Kinnary Shah</a>
+  <form class="form-inline my-2 my-lg-0">
+    <button [routerLink]="'/home'" type="button" class="btn btn-primary mr-sm-2"> Home</button>
+    <button [routerLink]="'/cart'" type="button" class="btn btn-primary my-2 my-sm-0" (click)=getCount()>
+      Cart <span class="badge badge-light">{{count}} </span>
+    </button>
+  
+  </form>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,26 @@
+.card-deck {
+  margin-bottom: 2rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+    min-height: 25rem;
+    max-height: 40rem;
+  }
+
+.card-img-top {
+    object-fit: cover;
+    height: 25rem;
+  }
+
+@media only screen and (max-width: 767px) {
+    /* For mobile phones: */
+    [class="img-fluid"] {
+      max-height: 35rem;
+      object-fit: cover;
+    }
+  }
+
+.img-fluid {
+    width:fit-content;
+}
+
+

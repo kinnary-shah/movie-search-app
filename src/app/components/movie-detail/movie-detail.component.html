@@ -1,0 +1,16 @@
+<div class="card-deck" style="width:20rem;">
+  <div class="card bg-light card-border-dark">
+    <img class="card-img-top img-fluid" [src]="movie.Poster" [alt]="movie.Title">
+    <div class="card-body text-dark">
+      <h6 class="card-text" >
+        {{ movie.Title }}
+      </h6>
+      <a 
+      (click)="addToCart()"
+      class="btn btn-primary">
+			Add to Cart
+		</a>
+    </div>
+  </div>
+</div>
+
