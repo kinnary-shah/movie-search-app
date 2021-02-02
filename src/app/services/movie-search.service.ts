@@ -17,7 +17,7 @@ export class MovieSearchService {
   
 
   getMovieTitles(title:string):Observable<Array<Movie>> {
-    const url="http://www.omdbapi.com/?apikey=bffa2e4as="+title;
+    const url="http://www.omdbapi.com/?apikey=bffa2e4a&s="+title;
     return this.httpClient.get(url)
     .pipe(
       map((res: any)=>  res.Search
