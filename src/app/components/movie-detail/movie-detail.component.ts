@@ -17,6 +17,7 @@ export class MovieDetailComponent implements OnInit {
   }
 
   addToCart() {
+    alert('Would you like to add the movie to cart? ');
     this.movieService.addToCart(this.movie)
   }
 

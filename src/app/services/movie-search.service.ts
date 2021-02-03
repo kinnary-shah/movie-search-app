@@ -29,6 +29,7 @@ export class MovieSearchService {
    let cartItem = new CartItems();
     cartItem.title = payload.Title;
     cartItem.imdbID = payload.imdbID;
+    cartItem.Poster = payload.Poster;
     this.items.push(cartItem);
     cartItem.sendCmd('REFRESH');
    // return this.httpClient.post(`${environment.baseURL}/cart`, payload);

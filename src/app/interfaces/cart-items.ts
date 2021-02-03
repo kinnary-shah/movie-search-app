@@ -6,6 +6,7 @@ export class CartItems {
     title :String;
     qunatity: number;
     imdbID:string;
+    Poster:string;
 
 
 sendCmd(cmd: string) {

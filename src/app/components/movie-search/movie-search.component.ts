@@ -11,7 +11,6 @@ import { MovieSearchService } from 'src/app/services/movie-search.service';
 export class MovieSearchComponent implements OnInit {
   movies: Observable<Array<Movie>>;
   searchText: string;
- // movie$:Observable<Array<Movie>>
 
   constructor(private movieService: MovieSearchService) { }
 
@@ -19,7 +18,11 @@ export class MovieSearchComponent implements OnInit {
   }
 
   searchMovies($event) {
+    if(this.searchText) {
    this.movies= this.movieService.getMovieTitles(this.searchText);
+    } else {
+      alert('No Search text provided. Please enter atleast 3 characters')
+    }
 
   }
 

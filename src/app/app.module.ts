@@ -9,6 +9,7 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CartItemsComponent } from './components/cart-items/cart-items.component
     MovieSearchComponent,
     MovieDetailComponent,
     NavBarComponent,
-    CartItemsComponent
+    CartItemsComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
