@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MovieSearchService } from './movie-search.service';
+import { MovieSearchService } from '../services/movie-search.service';
 
 describe('MovieSearchService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

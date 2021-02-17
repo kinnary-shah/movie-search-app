@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <div class="form-group">
     <label for="searchText"></label>
@@ -8,7 +9,13 @@
     (click)="searchMovies($event)">Search
   </button>
   <hr>
+  <div *ngIf="showCount" class="progress sticky-top" style="height: 10px;" >
+    <div class="progress-bar bg-success" role="progressbar" [style.width]="progressBarValue" aria-valuenow="progressBarValue" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div *ngIf="showCount" class="col-sm-12 text-right">
+    Displaying 1 to 10 of {{result}}
+</div>
   <div class="row">
-        <app-movie-detail *ngFor="let movie of movies | async" [movie]=movie></app-movie-detail>
+    <app-movie-detail *ngFor="let movie of movies" [movie]=movie></app-movie-detail>
   </div>
 </div>

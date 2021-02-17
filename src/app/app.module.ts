@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
+import { TruncateTextPipe } from './truncate-text.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
     MovieDetailComponent,
     NavBarComponent,
     CartItemsComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    TruncateTextPipe
   ],
   imports: [
     BrowserModule,

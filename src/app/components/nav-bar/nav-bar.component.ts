@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { fromEvent, Observable, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { CartItems } from 'src/app/interfaces/cart-items';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
 
@@ -12,7 +13,7 @@ export class NavBarComponent implements OnInit{
   count=0;
 
   constructor(private movieService: MovieSearchService) { }
-
+  
   ngOnInit() {
   }
 
@@ -20,8 +21,6 @@ export class NavBarComponent implements OnInit{
   getCount() {
     this.count = this.movieService.getCartItems().length;
   }
-
-
 
 }
 

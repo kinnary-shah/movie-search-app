@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Movie } from 'src/app/interfaces/movie';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
 
@@ -9,8 +10,13 @@ import { MovieSearchService } from 'src/app/services/movie-search.service';
   styleUrls: ['./movie-search.component.scss']
 })
 export class MovieSearchComponent implements OnInit {
-  movies: Observable<Array<Movie>>;
+  movies: Movie[];
   searchText: string;
+  result: number;
+  showCount:boolean=false;
+  @Input() progressBarValue:any =0;
+  count=0;
+  scroll$:Observable<Event> = fromEvent(document, 'scroll');
 
   constructor(private movieService: MovieSearchService) { }
 
@@ -19,11 +25,27 @@ export class MovieSearchComponent implements OnInit {
 
   searchMovies($event) {
     if(this.searchText) {
-   this.movies= this.movieService.getMovieTitles(this.searchText);
+   this.movieService.getMovieTitles(this.searchText).subscribe(res=>{
+   // this.movies= res;
+   this.movies=res.Search;
+   if(res.totalResults>0) {
+   this.result=res.totalResults;
+   this.showCount=true;
+   }
+   });
     } else {
       alert('No Search text provided. Please enter atleast 3 characters')
     }
 
   }
+
+  progress$ = this.scroll$.pipe(
+    map(({ target }: any) => {
+      const { scrollTop, scrollHeight, clientHeight } = target.scrollingElement;
+      return (scrollTop / (scrollHeight - clientHeight)) * 100;
+
+    })).subscribe(percent => {
+      this.progressBarValue = `${percent}%`;
+    });
 
 }

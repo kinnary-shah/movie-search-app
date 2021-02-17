@@ -16,11 +16,11 @@ export class MovieSearchService {
   constructor(private httpClient: HttpClient) { }
   
 
-  getMovieTitles(title:string):Observable<Array<Movie>> {
+  getMovieTitles(title:string):Observable<any> {
     const url="http://www.omdbapi.com/?apikey=bffa2e4a&s="+title;
     return this.httpClient.get(url)
     .pipe(
-      map((res: any)=>  res.Search
+      map((res: any)=>  res
     ))
   }
 

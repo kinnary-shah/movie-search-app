@@ -3,7 +3,7 @@
     <img class="card-img-top img-fluid img-thumbnail" [src]="movie.Poster" [alt]="movie.Title">
     <div class="card-body text-dark">
       <h6 class="card-text" >
-        {{ movie.Title }}
+        {{ movie.Title | truncateText }}
       </h6>
       <a 
       (click)="addToCart()"
